@@ -11,7 +11,7 @@ COPY requirements.txt /data/
 # So let's set it to our add-on persistent data directory.
 WORKDIR /data
 
-SHELL ["/bin/sh", "-o", "pipefail", "-c"]
+SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 	
 # Setup base
 RUN \
