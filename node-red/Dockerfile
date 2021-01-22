@@ -9,7 +9,7 @@ COPY package.json requirements.txt /data/
 WORKDIR /data
 
 # Set shell
-SHELL ["/bin/bash", "-o", "pipefail", "-c"]
+SHELL ["/bin/sh", "-o", "pipefail", "-c"]
 
 # Setup base
 RUN \
