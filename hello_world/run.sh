@@ -1,5 +1,8 @@
 #!/usr/bin/with-contenv bashio
-python3 -m http.server 8000
+declare ingress_port
+ingress_port=$(bashio::addon.ingress_port)
+
+python3 -m http.server ${ingress_port}
 
 echo Hello world!
 
