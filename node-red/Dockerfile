@@ -6,7 +6,7 @@ FROM ${BUILD_FROM}
 COPY package.json requirements.txt /data/
 
 # Set workdir
-WORKDIR /opt
+WORKDIR /data
 
 # Set shell
 SHELL ["/bin/sh", "-o", "pipefail", "-c"]
