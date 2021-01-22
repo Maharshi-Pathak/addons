@@ -3,7 +3,7 @@ ARG BUILD_FROM=hassioaddons/base:8.0.6
 FROM ${BUILD_FROM}
 
 # Copy Node-RED package.json
-COPY package.json requirements.txt /opt/
+COPY package.json requirements.txt /data/
 
 # Set workdir
 WORKDIR /opt
@@ -35,7 +35,7 @@ RUN \
     \
     && npm config set unsafe-perm true \
     \
-    && pip install --no-cache-dir -r /opt/requirements.txt \
+    && pip install --no-cache-dir -r /data/requirements.txt \
     \
     && npm install \
         --no-audit \
@@ -45,8 +45,6 @@ RUN \
         --unsafe-perm \
     \
     && npm cache clear --force \
-    \
-    && echo -e "StrictHostKeyChecking no" >> /etc/ssh/ssh_config \
     \
     && apk del --no-cache --purge .build-dependencies \
     && rm -fr \
