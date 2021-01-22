@@ -37,15 +37,6 @@ RUN \
     \
     && pip install --no-cache-dir -r /data/requirements.txt \
     \
-    && npm install \
-        --no-audit \
-        --no-optional \
-        --no-update-notifier \
-        --only=production \
-        --unsafe-perm \
-    \
-    && npm cache clear --force \
-    \
     && apk del --no-cache --purge .build-dependencies \
     && rm -fr \
         /tmp/* \
