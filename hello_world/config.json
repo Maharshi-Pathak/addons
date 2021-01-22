@@ -1,0 +1,54 @@
+{
+  "name": "Hello world",
+  "version": "1.0",
+  "slug": "hello_world",
+  "description": "My first real add-on!",
+  "arch": ["armhf", "armv7", "aarch64", "amd64", "i386"],
+  "webui": "https://[HOST]:[PORT:80]",
+  "init": false,
+  "advanced": true,
+  "startup": "services",
+  "host_dbus": true,
+  "boot": "auto",
+  "map": ["ssl", "share:rw"],	
+  "ingress": true,
+  "ingress_port": 0,
+  "homeassistant": "0.92.0b2",
+  "homeassistant_api": true,
+  "hassio_api": true,
+  "hassio_role": "manager",
+  "host_network": true,
+  "auth_api": true,
+  "auto_uart": true,
+  "gpio": true,
+  "ports": {
+	
+    "80/tcp": 8000
+  },
+  "ports_description": {
+    "80/tcp": "Web interface"
+  },
+  "map": [
+    "config:rw",
+    "ssl:rw",
+    "addons:rw",
+    "share:rw",
+    "backup:rw"
+  ],
+  "options": {
+    "server": {
+      "tcp_forwarding": false
+    }	
+  },
+  "schema": {
+    "log_level": "match(^(trace|debug|info|notice|warning|error|fatal)$)?",
+	"server": {
+      "tcp_forwarding": "bool"
+    }
+  },
+  "share_sessions": "bool",
+  "packages": ["str"],
+  "init_commands": ["str"],
+  "i_like_to_be_pwned": "bool?",
+  "leave_front_door_open": "bool?"
+}
